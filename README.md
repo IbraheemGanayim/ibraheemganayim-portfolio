@@ -1,24 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ibraheem Ganayim Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js, showcasing projects, skills, and professional information.
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38b2ac)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Portfolio Preview](public/profile.jpg)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design**: Looks great on all devices
+- **Modern UI/UX**: Built with Tailwind CSS and Framer Motion
+- **Server-Side Rendering**: Optimized with Next.js
+- **Performance Optimized**: Fast loading times with code splitting and image optimization
+- **SEO Friendly**: Built-in sitemap and metadata
+- **Contact Form**: Email functionality using Nodemailer
+- **Project Showcase**: Dynamic project display with filtering options
+- **Testimonials**: Showcase client feedback
+- **Document Downloads**: Share resume and other documents
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or later
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ibraheemganayim-portfolio.git
+   cd ibraheemganayim-portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Create environment variables:
+   ```bash
+   cp .env.example .env.local
+   ```
+   Then update the variables in `.env.local` with your configuration.
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## 📁 Project Structure
 
 ## Learn More
 
