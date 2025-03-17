@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     siteName: 'Ibraheem Ganayim Portfolio',
     images: [
       {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        url: '/profile.jpg',
+        width: 800,
+        height: 800,
         alt: 'Ibraheem Ganayim - R&D Team Lead & Software Engineer',
       }
     ],
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ibraheem Ganayim | R&D Team Lead & Software Engineer',
     description: 'Co-founder and R&D Team Lead at Dojo. Expert in full-stack development and cloud architecture.',
-    images: ['/og-image.png'],
+    images: ['/profile.jpg'],
   },
   viewport: {
     width: 'device-width',
