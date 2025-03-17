@@ -1,9 +1,14 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/static/
 
 # Host
 Host: https://ibraheemganayim.com
 
 # Sitemaps
 Sitemap: https://ibraheemganayim.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

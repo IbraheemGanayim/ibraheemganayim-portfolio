@@ -1,16 +1,41 @@
 {
-  "name": "Ibraheem Ganayim Portfolio",
+  "name": "Ibraheem Ganayim - R&D Team Lead & Software Engineer Portfolio",
   "short_name": "IB Portfolio",
-  "description": "R&D Team Lead & Software Engineer Portfolio",
+  "description": "Portfolio of Ibraheem Ganayim, R&D Team Lead & Software Engineer specializing in full-stack development and cloud architecture",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#3B82F6",
+  "orientation": "any",
   "icons": [
     {
       "src": "/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "categories": ["portfolio", "web development", "software engineering"],
+  "screenshots": [
+    {
+      "src": "/screenshot.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "label": "Ibraheem Ganayim Portfolio Homepage"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false
 }
