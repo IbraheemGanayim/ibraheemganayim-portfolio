@@ -25,8 +25,8 @@ export default function AboutSection() {
             <div className="absolute -inset-1 bg-card-gradient rounded-3xl opacity-30 blur-xl"></div>
             <div className="absolute inset-0 glassmorphism rounded-3xl overflow-hidden">
               <Image
-                src="/about-image.png"
-                alt="Ibraheem Ganayim Working"
+                src="/profile.jpg"
+                alt="Ibraheem Ganayim"
                 fill
                 className="object-cover p-2"
               />
