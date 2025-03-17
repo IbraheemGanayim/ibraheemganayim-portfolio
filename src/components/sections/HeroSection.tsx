@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FiArrowRight, FiGithub, FiLinkedin } from 'react-icons/fi';
+import Image from 'next/image';
 
 export default function HeroSection() {
   return (
@@ -79,9 +80,14 @@ export default function HeroSection() {
               <div className="absolute inset-0 bg-card-gradient rounded-3xl opacity-10"></div>
               <div className="absolute -inset-1 bg-card-gradient rounded-3xl opacity-30 blur-xl"></div>
               <div className="absolute inset-0 glassmorphism rounded-3xl overflow-hidden flex items-center justify-center">
-                <div className="w-full h-full bg-dark-light flex items-center justify-center">
-                  <span className="text-4xl text-gradient">IB</span>
-                </div>
+                <Image
+                  src="/profile.jpg"
+                  alt="Ibraheem Ganayim - R&D Team Lead and Software Engineer in Tel Aviv"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover"
+                />
               </div>
             </div>
           </motion.div>
