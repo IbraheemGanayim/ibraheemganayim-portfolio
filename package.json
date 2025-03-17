@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.17",
+    "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^11.0.8",
     "next": "^14.2.24",
     "nodemailer": "^6.10.0",
