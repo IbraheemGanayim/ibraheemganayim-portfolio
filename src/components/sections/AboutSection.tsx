@@ -47,13 +47,13 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
         >
           <h3 className="text-2xl font-semibold mb-4">
-            Full-Stack Developer & UI/UX Designer
+            Co-founder & R&D Team Lead
           </h3>
           
           <p className="text-gray-300 mb-6">
-            B.Sc. Software Engineering graduate skilled in distributed systems, object-oriented design and cloud technologies.
-            Proficient in Python, Java and C++, with strong problem-solving abilities and experience in scalable, fault-tolerant systems.
-            Passionate about leveraging technology to deliver innovative, impactful and customer-focused solutions.
+            BSc Software Engineering graduate from Braude Academic College, specializing in distributed systems and cloud architecture. 
+            Currently leading a team of 15+ engineers at Dojo, driving innovation in mobile app development and cloud infrastructure. 
+            Passionate about building scalable solutions and mentoring future tech leaders.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -63,7 +63,7 @@ export default function AboutSection() {
               </div>
               <div>
                 <h4 className="font-medium mb-1">Current Role</h4>
-                <p className="text-gray-400 text-sm">Full Stack Engineer, Dojo — Tel-Aviv</p>
+                <p className="text-gray-400 text-sm">Co-founder & R&D Team Lead, Dojo — Tel-Aviv</p>
               </div>
             </div>
             
@@ -103,10 +103,11 @@ export default function AboutSection() {
               Contact Me
             </Link>
             <Link
-              href="/resume.pdf"
+              href="/documents/resume.pdf"
               className="btn-outline flex items-center justify-center"
               target="_blank"
               rel="noopener noreferrer"
+              download
             >
               <FiDownload className="mr-2" />
               Download Resume

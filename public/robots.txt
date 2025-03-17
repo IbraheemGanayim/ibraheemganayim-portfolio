@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ibraheemganayim.com
+
+# Sitemaps
+Sitemap: https://ibraheemganayim.com/sitemap.xml

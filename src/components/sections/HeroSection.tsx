@@ -26,12 +26,12 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <h2 className="text-2xl md:text-3xl font-medium mb-6 text-gray-300">
-                Full-Stack Developer & UI/UX Designer
+                R&D Team Lead & Software Engineer
               </h2>
               
               <p className="text-gray-400 text-lg mb-8 max-w-lg">
-                I create exceptional digital experiences through innovative design and robust 
-                development solutions that transform ideas into reality.
+                Co-founder and R&D Team Lead at Dojo. BSc in Software Engineering with expertise in full-stack development, 
+                system architecture, and team leadership. Transforming innovative ideas into scalable solutions.
               </p>
               
               <div className="flex flex-wrap gap-4">

@@ -1,0 +1,16 @@
+{
+  "name": "Ibraheem Ganayim Portfolio",
+  "short_name": "IB Portfolio",
+  "description": "R&D Team Lead & Software Engineer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

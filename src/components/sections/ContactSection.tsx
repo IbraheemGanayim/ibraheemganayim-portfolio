@@ -19,27 +19,25 @@ export default function ContactSection() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
-    
-    // Simulate form submission
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      // In a real app, you would send the form data to your server or a form service
-      // await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
-      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (err) {
@@ -48,6 +46,18 @@ export default function ContactSection() {
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const formAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+      },
+    }),
   };
 
   return (
@@ -115,7 +125,12 @@ export default function ContactSection() {
           className="card"
         >
           {isSubmitted ? (
-            <div className="text-center py-12">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="text-center py-12"
+            >
               <div className="w-16 h-16 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <FiCheck className="text-primary text-3xl" />
               </div>
@@ -127,10 +142,17 @@ export default function ContactSection() {
               >
                 Send Another Message
               </button>
-            </div>
+            </motion.div>
           ) : (
             <form onSubmit={handleSubmit}>
-              <div className="mb-4">
+              <motion.div
+                custom={0}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={formAnimation}
+                className="mb-4"
+              >
                 <label htmlFor="name" className="block text-gray-300 mb-2">
                   Your Name
                 </label>
@@ -141,12 +163,19 @@ export default function ContactSection() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-colors"
+                  className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-all duration-300"
                   placeholder="John Doe"
                 />
-              </div>
+              </motion.div>
               
-              <div className="mb-4">
+              <motion.div
+                custom={1}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={formAnimation}
+                className="mb-4"
+              >
                 <label htmlFor="email" className="block text-gray-300 mb-2">
                   Your Email
                 </label>
@@ -160,9 +189,16 @@ export default function ContactSection() {
                   className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-colors"
                   placeholder="john@example.com"
                 />
-              </div>
+              </motion.div>
               
-              <div className="mb-4">
+              <motion.div
+                custom={2}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={formAnimation}
+                className="mb-4"
+              >
                 <label htmlFor="subject" className="block text-gray-300 mb-2">
                   Subject
                 </label>
@@ -176,9 +212,16 @@ export default function ContactSection() {
                   className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-colors"
                   placeholder="Project Inquiry"
                 />
-              </div>
+              </motion.div>
               
-              <div className="mb-6">
+              <motion.div
+                custom={3}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={formAnimation}
+                className="mb-6"
+              >
                 <label htmlFor="message" className="block text-gray-300 mb-2">
                   Your Message
                 </label>
@@ -192,17 +235,23 @@ export default function ContactSection() {
                   className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-colors resize-none"
                   placeholder="Hello, I'd like to discuss a project..."
                 />
-              </div>
+              </motion.div>
               
               {error && (
-                <div className="mb-4 p-3 bg-red-900 bg-opacity-20 border border-red-800 rounded-lg text-red-500">
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-4 p-3 bg-red-900 bg-opacity-20 border border-red-800 rounded-lg text-red-500"
+                >
                   {error}
-                </div>
+                </motion.div>
               )}
               
-              <button 
-                type="submit" 
+              <motion.button
+                type="submit"
                 disabled={isSubmitting}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className={`btn-primary w-full flex items-center justify-center
                   ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}
                 `}
@@ -217,7 +266,7 @@ export default function ContactSection() {
                     <FiSend className="mr-2" /> Send Message
                   </>
                 )}
-              </button>
+              </motion.button>
             </form>
           )}
         </motion.div>

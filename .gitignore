@@ -63,6 +63,9 @@ package-lock.json
 logs
 *.log
 
+# Resume file
+public/documents/resume.pdf
+
 # OS generated files
 .DS_Store
 .DS_Store?
