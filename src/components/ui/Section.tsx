@@ -14,12 +14,12 @@ export default function Section({ id, className = '', children, fullWidth = fals
   return (
     <section 
       id={id} 
-      className={`section-padding ${className}`}
+      className={`section-padding w-full overflow-hidden ${className}`}
     >
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+        viewport={{ once: true, margin: "0px", amount: 0.1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         style={{ willChange: "opacity, transform" }}
         className={fullWidth ? 'w-full' : 'container-custom mx-auto'}

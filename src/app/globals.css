@@ -14,17 +14,19 @@
   * {
     @apply antialiased;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
     scroll-behavior: smooth;
     @apply overflow-x-hidden;
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    height: 100%;
+    position: relative;
   }
 
   body {
-    @apply bg-dark text-light overflow-x-hidden;
+    @apply bg-dark text-light;
     background: linear-gradient(
         to bottom,
         rgb(var(--background-start-rgb)),
@@ -35,7 +37,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    touch-action: manipulation;
   }
 }
 
