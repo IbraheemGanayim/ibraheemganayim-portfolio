@@ -1,11 +1,7 @@
-import { Metadata } from 'next';
+"use client";
+
 import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
-
-export const metadata: Metadata = {
-  title: 'Privacy Policy',
-  description: 'Privacy policy and data protection information for Ibraheem Ganayim\'s portfolio website.',
-};
 
 export default function PrivacyPolicy() {
   return (

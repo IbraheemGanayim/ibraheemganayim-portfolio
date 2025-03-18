@@ -1,11 +1,7 @@
-import { Metadata } from 'next';
+"use client";
+
 import { motion } from 'framer-motion';
 import Section from '@/components/ui/Section';
-
-export const metadata: Metadata = {
-  title: 'Terms of Service',
-  description: 'Terms of Service and conditions of use for Ibraheem Ganayim\'s portfolio website.',
-};
 
 export default function TermsOfService() {
   return (
