@@ -25,12 +25,12 @@ export default function AboutSection() {
             <div className="absolute -inset-1 bg-card-gradient rounded-3xl opacity-30 blur-xl"></div>
             <div className="absolute inset-0 glassmorphism rounded-3xl overflow-hidden">
               <Image
-                src="/profile.jpg"
-                alt="Ibraheem Ganayim - Software Engineer and R&D Team Lead profile photo"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover p-2"
+              src="/grad.jpg"
+              alt="Ibraheem Ganayim - Software Engineer and R&D Team Lead profile photo"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover p-2 rounded-2xl"
               />
             </div>
             
