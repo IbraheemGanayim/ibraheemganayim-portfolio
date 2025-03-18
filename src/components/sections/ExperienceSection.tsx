@@ -32,6 +32,19 @@ const experiences = [
       "Selected as 1 of 6 students from ~600 for the Excellence for Hi-Tech program, recognizing technical skills."
     ],
     skills: ["Python", "Power BI", "C#", "ASP.NET", "Data Analysis"]
+  },
+  {
+    id: 3,
+    title: "Nano Satellite Development Program Tutor",
+    company: "Braude Academic College of Engineering",
+    location: "Karmiel",
+    period: "2018 - 2019",
+    description: [
+      "Taught high-school students Physics, Astrophysics, and hands-on programming with Raspberry Pi & Arduino.",
+      "Mentored students in the נוער שוחר מדע program, fostering STEM education and practical engineering skills.",
+      "Developed and delivered engaging curriculum combining theoretical knowledge with practical applications."
+    ],
+    skills: ["Teaching", "Raspberry Pi", "Arduino", "Physics", "Astrophysics"]
   }
 ];
 
