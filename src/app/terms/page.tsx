@@ -18,7 +18,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2>Agreement to Terms</h2>
             <p>
-              By accessing ibraheemganayim.com (the "Website"), you agree to be bound by these Terms of Service
+              By accessing ibraheemganayim.com (the &quot;Website&quot;), you agree to be bound by these Terms of Service
               and all applicable laws and regulations. If you do not agree with any of these terms, you are
               prohibited from using or accessing this Website.
             </p>
@@ -68,7 +68,7 @@ export default function TermsOfService() {
           <section className="mb-8">
             <h2>Disclaimer</h2>
             <p>
-              The materials on the Website are provided on an 'as is' basis. Ibraheem Ganayim makes no
+              The materials on the Website are provided on an &apos;as is&apos; basis. Ibraheem Ganayim makes no
               warranties, expressed or implied, and hereby disclaims and negates all other warranties
               including, without limitation, implied warranties or conditions of merchantability, fitness
               for a particular purpose, or non-infringement of intellectual property.
