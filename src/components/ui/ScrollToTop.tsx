@@ -16,7 +16,7 @@ export default function ScrollToTop() {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -28,16 +28,26 @@ export default function ScrollToTop() {
   };
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isVisible && (
         <motion.button
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
+          transition={{ 
+            duration: 0.3,
+            ease: [0.22, 1, 0.36, 1],
+            scale: {
+              type: "spring",
+              damping: 20,
+              stiffness: 300
+            }
+          }}
+          style={{ willChange: "transform, opacity" }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-primary rounded-full shadow-lg z-50 text-white"
+          className="fixed bottom-8 right-8 p-3 bg-primary rounded-full shadow-lg z-50 text-white transform-gpu"
           aria-label="Scroll to top"
         >
           <FiArrowUp className="text-xl" />

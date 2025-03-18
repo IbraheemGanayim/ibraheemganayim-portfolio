@@ -19,8 +19,9 @@ export default function Section({ id, className = '', children, fullWidth = fals
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px", amount: 0.3 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        style={{ willChange: "opacity, transform" }}
         className={fullWidth ? 'w-full' : 'container-custom mx-auto'}
       >
         {children}

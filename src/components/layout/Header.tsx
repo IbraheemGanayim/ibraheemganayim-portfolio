@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-dark shadow-lg backdrop-blur-sm bg-opacity-80' : 'bg-transparent'}`}>
-      <div className="container-custom mx-auto flex justify-between items-center py-4">
+      <div className="container-custom mx-auto flex justify-between items-center py-3">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -47,13 +47,13 @@ export default function Header() {
           transition={{ duration: 0.5 }}
           className="flex items-center"
         >
-          <Link href="/" className="text-2xl font-bold text-gradient">
+          <Link href="/" className="text-xl sm:text-2xl font-bold text-gradient">
             Ibraheem<span className="text-white">.dev</span>
           </Link>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden lg:flex space-x-6">
           {navLinks.map((link, index) => (
             <motion.div
               key={link.name}
@@ -63,7 +63,7 @@ export default function Header() {
             >
               <Link 
                 href={link.href} 
-                className="text-light hover:text-primary transition-colors duration-300"
+                className="text-sm text-light hover:text-primary transition-colors duration-300"
               >
                 {link.name}
               </Link>
@@ -72,10 +72,10 @@ export default function Header() {
         </nav>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-none p-2"
             aria-label="Toggle Menu"
           >
             {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -90,7 +90,7 @@ export default function Header() {
           animate={{ opacity: 1, height: 'auto' }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
-          className="md:hidden glassmorphism"
+          className="lg:hidden glassmorphism"
         >
           <div className="container-custom mx-auto py-4">
             <nav className="flex flex-col space-y-4">

@@ -11,36 +11,55 @@
 }
 
 @layer base {
+  * {
+    @apply antialiased;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply overflow-x-hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
   body {
-    @apply bg-dark text-light;
+    @apply bg-dark text-light overflow-x-hidden;
     background: linear-gradient(
         to bottom,
         rgb(var(--background-start-rgb)),
         rgb(var(--background-end-rgb))
       )
       fixed;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
 @layer components {
   .glassmorphism {
-    @apply bg-glass-gradient backdrop-blur-lg bg-opacity-20 border border-white/10 shadow-custom;
+    @apply bg-glass-gradient backdrop-blur-lg bg-opacity-20 border border-white/10 shadow-custom transform-gpu;
   }
 
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-1;
+    -webkit-background-clip: text;
+    transform: translateZ(0);
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg shadow-button transition-all duration-300 hover:translate-y-[-2px];
+    @apply px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg shadow-button transition-all duration-300 hover:translate-y-[-2px] transform-gpu;
   }
 
   .btn-outline {
-    @apply px-6 py-3 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300;
+    @apply px-6 py-3 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 transform-gpu;
   }
 
   .card {
-    @apply bg-dark-light rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300;
+    @apply bg-dark-light rounded-2xl p-6 shadow-card hover:shadow-glow transition-all duration-300 transform-gpu;
   }
 
   .section-padding {
@@ -50,6 +69,19 @@
   .container-custom {
     @apply container mx-auto px-4 md:px-6 lg:px-8 max-w-7xl;
   }
+}
+
+/* Force hardware acceleration for animations */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Smooth scrolling for anchor links */
+[href^="#"] {
+  scroll-margin-top: 100px;
 }
 
 /* Custom scrollbar */

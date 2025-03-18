@@ -15,7 +15,8 @@ export default function HeroSection() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              style={{ willChange: "opacity, transform" }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
             >
               Hi, I&apos;m <span className="text-gradient">Ibraheem Ganayim</span>
@@ -24,7 +25,8 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              style={{ willChange: "opacity, transform" }}
             >
               <h2 className="text-2xl md:text-3xl font-medium mb-6 text-gray-300">
                 R&D Team Lead & Software Engineer
@@ -71,9 +73,19 @@ export default function HeroSection() {
           </div>
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ 
+              duration: 0.8, 
+              ease: [0.22, 1, 0.36, 1], 
+              delay: 0.3,
+              scale: {
+                type: "spring",
+                damping: 25,
+                stiffness: 120,
+              }
+            }}
+            style={{ willChange: "opacity, transform" }}
             className="relative"
           >
             <div className="relative w-full h-[400px] md:h-[500px]">

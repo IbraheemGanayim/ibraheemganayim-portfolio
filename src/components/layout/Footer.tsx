@@ -89,10 +89,10 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">
-                example@ibraheemganayim.com
+                Ganayim.Ibraheem@gmail.com
               </li>
               <li className="text-gray-400">
-                San Francisco, CA
+                Sakhnin, IL
               </li>
             </ul>
           </div>
