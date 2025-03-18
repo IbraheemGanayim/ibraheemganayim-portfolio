@@ -52,7 +52,31 @@ module.exports = {
         "2xl": "1.5rem",
         "3xl": "2rem",
       },
+      typography: {
+        invert: {
+          css: {
+            "--tw-prose-body": "var(--tw-prose-invert-body)",
+            "--tw-prose-headings": "var(--tw-prose-invert-headings)",
+            "--tw-prose-links": "var(--tw-prose-invert-links)",
+            "--tw-prose-lists": "var(--tw-prose-invert-lists)",
+            "--tw-prose-hr": "var(--tw-prose-invert-hr)",
+            color: "#F8F8F8",
+            "h1, h2, h3, h4": {
+              color: "#FFFFFF",
+            },
+            a: {
+              color: "#0055FF",
+              "&:hover": {
+                color: "#0044CC",
+              },
+            },
+            "ul > li::marker": {
+              color: "#7B61FF",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
