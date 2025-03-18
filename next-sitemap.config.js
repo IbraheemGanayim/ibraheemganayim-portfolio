@@ -1,6 +1,8 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://ibraheemganayim.com",
+  siteUrl:
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "https://ibraheemganayim-portfolio.vercel.app",
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
@@ -9,7 +11,8 @@ module.exports = {
     ],
     additionalSitemaps: [
       `${
-        process.env.NEXT_PUBLIC_SITE_URL || "https://ibraheemganayim.com"
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        "https://ibraheemganayim-portfolio.vercel.app"
       }/sitemap.xml`,
     ],
   },

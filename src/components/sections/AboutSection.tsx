@@ -25,7 +25,7 @@ export default function AboutSection() {
             <div className="absolute -inset-1 bg-card-gradient rounded-3xl opacity-30 blur-xl"></div>
             <div className="absolute inset-0 glassmorphism rounded-3xl overflow-hidden">
               <Image
-              src="/grad.jpg"
+              src="/grad.JPG"
               alt="Ibraheem Ganayim - Software Engineer and R&D Team Lead profile photo"
               fill
               priority
@@ -34,7 +34,7 @@ export default function AboutSection() {
               />
             </div>
             
-            <figcaption className="absolute -bottom-6 -right-6 bg-dark-light p-4 rounded-2xl shadow-card glassmorphism">
+            <figcaption className="absolute -bottom-6 right-0 sm:-right-6 bg-dark-light p-4 rounded-2xl shadow-card glassmorphism">
               <div className="text-gradient font-bold text-xl">B.Sc.</div>
               <div className="text-sm text-gray-300">Software Engineer</div>
             </figcaption>

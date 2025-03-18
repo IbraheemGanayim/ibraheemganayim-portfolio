@@ -13,6 +13,7 @@
     "deploy": "node deploy.js"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@swc/helpers": "^0.5.15",
     "@types/nodemailer": "^6.4.17",
     "@vercel/analytics": "^1.5.0",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^15.2.2",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20.11.25",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",

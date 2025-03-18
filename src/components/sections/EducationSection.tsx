@@ -32,28 +32,80 @@ const education = [
     period: "2019 - 2020",
     description: "Comprehensive web development training covering modern JavaScript frameworks, backend technologies, and database design.",
     type: "course"
+  },
+  {
+    id: 4,
+    degree: "Early Computer Science Program",
+    institution: "Haifa University - Etgar Program",
+    location: "Haifa",
+    period: "2016 - 2017",
+    description: "Selected for an advanced program enabling outstanding high-school students to complete B.Sc. computer science courses alongside school studies.",
+    type: "academic"
+  },
+  {
+    id: 5,
+    degree: "Web & Mobile Development",
+    institution: "Intel",
+    location: "Haifa",
+    period: "2015",
+    description: "Completed intensive courses in Web Development (HTML/CSS) and Android app development through Intel's Son of Employee program.",
+    type: "course"
   }
 ];
 
-const awards = [
+const hackathonAwards = [
   {
     id: 1,
-    title: "Winner at Tsofen's Eco-Hack Hackathon",
-    year: "2023",
-    issuer: "Tsofen"
+    title: "Winner - Tsofen's Eco-Hack Hackathon",
+    year: "2022",
+    issuer: "Tsofen",
+    description: "Led team to victory with innovative environmental solution"
+  },
+  {
+    id: 2,
+    title: "Makeathon Finalist",
+    year: "2022",
+    issuer: "Hasoub",
+    description: "Developed solutions for people with special abilities"
+  },
+  {
+    id: 3,
+    title: "Makeathon Finalist",
+    year: "2020",
+    issuer: "Tsofen",
+    description: "Developed mind-controlled wheelchair project"
+  },
+  {
+    id: 4,
+    title: "Ultra Hackathon Finalist",
+    year: "2019",
+    issuer: "Tsofen",
+    description: "Developed volunteering web application"
+  },
+  
+];
+
+const entrepreneurshipAwards = [
+  {
+    id: 1,
+    title: "Certified Entrepreneur",
+    year: "2024",
+    issuer: "50:50 Startups",
+    description: "Completed 2-week startup program in Cyprus"
   },
   {
     id: 2,
     title: "Certified Entrepreneur",
     year: "2023",
-    issuer: "MassChallenge Israel & Hasoub Labs"
+    issuer: "MassChallenge Israel & Hasoub",
+    description: "Completed Pre-accelerator program"
   }
 ];
 
 export default function EducationSection() {
   return (
     <Section id="education" className="bg-dark-light">
-      <SectionTitle subtitle="My Education" title="Academic Background" />
+      <SectionTitle subtitle="My Education" title="Academic Background" className="mb-12" />
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2">
@@ -104,50 +156,79 @@ export default function EducationSection() {
           </div>
         </div>
         
-        <div>
-          <h3 className="flex items-center text-xl font-semibold mb-6">
-            <FiAward className="text-primary mr-3" />
-            Awards & Involvements
-          </h3>
-          
-          <div className="card mb-6">
-            <div className="space-y-6">
-              {awards.map((award, index) => (
-                <motion.div
-                  key={award.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={index !== 0 ? "pt-6 border-t border-gray-800" : ""}
-                >
-                  <h4 className="font-semibold mb-1">{award.title}</h4>
-                  <div className="flex items-center text-sm text-gray-400">
-                    <span className="mr-2">
-                      {award.issuer}
-                    </span>
-                    <span className="text-gray-600">•</span>
-                    <span className="ml-2">
-                      {award.year}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
+        <div className="space-y-6">
+          <div>
+            <h3 className="flex items-center text-xl font-semibold mb-6">
+              <FiAward className="text-primary mr-3" />
+              Hackathons & Innovation
+            </h3>
+            
+            <div className="card mb-6">
+              <div className="space-y-6">
+                {hackathonAwards.map((award, index) => (
+                  <motion.div
+                    key={award.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={index !== 0 ? "pt-6 border-t border-gray-800" : ""}
+                  >
+                    <h4 className="font-semibold mb-1">{award.title}</h4>
+                    <div className="flex items-center text-sm text-gray-400 mb-2">
+                      <span className="mr-2">{award.issuer}</span>
+                      <span className="text-gray-600">•</span>
+                      <span className="ml-2">{award.year}</span>
+                    </div>
+                    <p className="text-sm text-gray-300">{award.description}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="card"
+            >
+              <h4 className="font-semibold mb-3">Mentorship & Community</h4>
+              <p className="text-gray-400 text-sm">
+                Mentor for hackathons and makeathons at Tsofen and Hasoub since 2018, contributing to the growth of tech innovation in the community.
+              </p>
+            </motion.div>
+          </div>
+
+          <div>
+            <h3 className="flex items-center text-xl font-semibold mb-6">
+              <FiAward className="text-primary mr-3" />
+              Entrepreneurship
+            </h3>
+            
+            <div className="card">
+              <div className="space-y-6">
+                {entrepreneurshipAwards.map((award, index) => (
+                  <motion.div
+                    key={award.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className={index !== 0 ? "pt-6 border-t border-gray-800" : ""}
+                  >
+                    <h4 className="font-semibold mb-1">{award.title}</h4>
+                    <div className="flex items-center text-sm text-gray-400 mb-2">
+                      <span className="mr-2">{award.issuer}</span>
+                      <span className="text-gray-600">•</span>
+                      <span className="ml-2">{award.year}</span>
+                    </div>
+                    <p className="text-sm text-gray-300">{award.description}</p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="card"
-          >
-            <h4 className="font-semibold mb-3">Active Participation</h4>
-            <p className="text-gray-400 text-sm">
-              Active participant & Mentor at Tsofen&apos;s & Hasoub&apos;s Hackathon Events (2019 - Present)
-            </p>
-          </motion.div>
         </div>
       </div>
     </Section>

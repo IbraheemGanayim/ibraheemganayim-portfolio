@@ -1,15 +1,17 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import SectionTitle from '../ui/SectionTitle';
 import Section from '../ui/Section';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck } from 'react-icons/fi';
 
 export default function ContactSection() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    user_name: '',
+    user_email: '',
     subject: '',
     message: ''
   });
@@ -28,18 +30,19 @@ export default function ContactSection() {
     setError('');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
+      const result = await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current!,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
 
-      if (!response.ok) {
+      if (result.text !== 'OK') {
         throw new Error('Failed to send message');
       }
 
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ user_name: '', user_email: '', subject: '', message: '' });
     } catch (err) {
       setError('Something went wrong. Please try again later.');
       console.error('Error submitting form:', err);
@@ -144,7 +147,7 @@ export default function ContactSection() {
               </button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit}>
+            <form ref={formRef} onSubmit={handleSubmit}>
               <motion.div
                 custom={0}
                 initial="hidden"
@@ -153,14 +156,14 @@ export default function ContactSection() {
                 variants={formAnimation}
                 className="mb-4"
               >
-                <label htmlFor="name" className="block text-gray-300 mb-2">
+                <label htmlFor="user_name" className="block text-gray-300 mb-2">
                   Your Name
                 </label>
                 <input 
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="user_name"
+                  name="user_name"
+                  value={formData.user_name}
                   onChange={handleChange}
                   required
                   className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-all duration-300"
@@ -176,14 +179,14 @@ export default function ContactSection() {
                 variants={formAnimation}
                 className="mb-4"
               >
-                <label htmlFor="email" className="block text-gray-300 mb-2">
+                <label htmlFor="user_email" className="block text-gray-300 mb-2">
                   Your Email
                 </label>
                 <input 
                   type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  id="user_email"
+                  name="user_email"
+                  value={formData.user_email}
                   onChange={handleChange}
                   required
                   className="w-full bg-dark px-4 py-3 rounded-lg border border-gray-700 focus:border-primary focus:outline-none transition-colors"
