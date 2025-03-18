@@ -12,27 +12,19 @@ import ContactSection from '@/components/sections/ContactSection';
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative w-full overflow-hidden">
       <Header />
-      
-      <HeroSection />
-      
-      <AboutSection />
-      
-      <SkillsSection />
-      
-      <ProjectsSection />
-      
-      <ExperienceSection />
-      
-      <EducationSection />
-      
-      <TestimonialsSection />
-      
-      <ContactSection />
-      
+      <div className="flex flex-col w-full">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <EducationSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </div>
       <Footer />
-      
       <ScrollToTop />
     </main>
   );
