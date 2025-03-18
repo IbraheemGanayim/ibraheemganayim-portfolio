@@ -124,8 +124,8 @@ export default function EducationSection() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="card relative overflow-hidden"
               >
-                {/* Badge for education type */}
-                <div className="absolute top-6 right-6">
+                {/* Badge for education type with adjusted positioning and responsive padding */}
+                <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
                   <span className={`text-xs px-3 py-1 rounded-full 
                     ${item.type === 'academic' 
                       ? 'bg-primary bg-opacity-20 text-primary' 
@@ -135,7 +135,7 @@ export default function EducationSection() {
                   </span>
                 </div>
                 
-                <h4 className="text-lg font-semibold mb-2">{item.degree}</h4>
+                <h4 className="text-lg font-semibold mb-2 pr-24">{item.degree}</h4>
                 
                 <div className="text-gray-400 mb-1">{item.institution}</div>
                 
