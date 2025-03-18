@@ -13,14 +13,18 @@
 @layer base {
   * {
     @apply antialiased;
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    @apply overflow-x-hidden;
+    width: 100%;
+    max-width: 100%;
   }
 
   body {
-    @apply bg-dark text-light;
+    @apply bg-dark text-light overflow-x-hidden;
     background: linear-gradient(
         to bottom,
         rgb(var(--background-start-rgb)),
@@ -30,6 +34,8 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
