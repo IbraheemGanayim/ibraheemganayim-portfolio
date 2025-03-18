@@ -23,8 +23,22 @@ const nextConfig = {
     optimizeCss: true,
     scrollRestoration: true,
     optimizePackageImports: ["framer-motion", "react-icons"],
-    optimizeServerComponents: true,
-    optimizeFonts: true,
+    workerThreads: true,
+  },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|svg|webp|avif)$/i,
+      type: "asset",
+      generator: {
+        filename: "static/media/[hash][ext][query]",
+      },
+      parser: {
+        dataUrlCondition: {
+          maxSize: 8 * 1024, // 8kb
+        },
+      },
+    });
+    return config;
   },
   headers: async () => [
     {
