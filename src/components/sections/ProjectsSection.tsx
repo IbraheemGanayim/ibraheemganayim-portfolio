@@ -124,6 +124,7 @@ export default function ProjectsSection() {
               
               {/* Links */}
               <div className="flex gap-3">
+                {/* Live demo button temporarily disabled 
                 <Link
                   href={project.liveUrl}
                   target="_blank"
@@ -132,6 +133,7 @@ export default function ProjectsSection() {
                 >
                   <FiExternalLink /> Live Demo
                 </Link>
+                */}
                 <Link
                   href={project.githubUrl}
                   target="_blank"
