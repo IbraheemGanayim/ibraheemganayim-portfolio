@@ -105,7 +105,7 @@ const entrepreneurshipAwards = [
 export default function EducationSection() {
   return (
     <Section id="education" className="bg-dark-light">
-      <SectionTitle subtitle="My Education" title="Academic Background" className="mb-8" />
+      <SectionTitle subtitle="My Education" title="Academic Background" className="mb-12" />
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2">

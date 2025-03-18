@@ -16,7 +16,7 @@ export default function SectionTitle({
   className = ''
 }: SectionTitleProps) {
   return (
-    <div className={`mb-12 ${centered ? 'text-center' : ''} ${className}`}>
+    <div className={`mb-16 ${centered ? 'text-center' : ''} ${className}`}>
       <motion.p 
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
