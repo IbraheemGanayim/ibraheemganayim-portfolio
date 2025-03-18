@@ -18,8 +18,8 @@ export default function PrivacyPolicy() {
           <section className="mb-8">
             <h2>Introduction</h2>
             <p>
-              This Privacy Policy outlines how Ibraheem Ganayim (\"I\", \"me\", or \"my\") collects, uses, and protects
-              your information when you visit ibraheemganayim.com (the \"Website\").
+              This Privacy Policy outlines how Ibraheem Ganayim (&quot;I&quot;, &quot;me&quot;, or &quot;my&quot;) collects, uses, and protects
+              your information when you visit ibraheemganayim.com (the &quot;Website&quot;).
             </p>
           </section>
 
